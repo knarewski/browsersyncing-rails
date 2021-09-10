@@ -3,6 +3,11 @@ unless Rails.root.join("package.json").exist?
   copy_file "#{__dir__}/package.json", "package.json"
 end
 
+unless Rails.root.join("bs-config.js").exist?
+  say "Add default bs-config.js"
+  copy_file "#{__dir__}/bs-config.js", "bs-config.js"
+end
+
 if Rails.root.join("Procfile.dev").exist?
   append_to_file "Procfile.dev", "browsersyncing: yarn browsersyncing"
 else
@@ -21,4 +26,4 @@ say "Install Browser Sync"
 run "yarn add browser-sync"
 
 say "Add browsersyncing script"
-run %(npm set-script browsersyncing "browser-sync start --proxy localhost:3000 --port 3001 --ui-port 3002 --no-open --files 'app/assets, app/views'")
+run %(npm set-script browsersyncing "browser-sync start --config bs-config.js")
