@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+VERSION=$1
+
+printf "module Browsersyncing\n  VERSION = \"$VERSION\"\nend\n" > ./lib/browsersyncing/version.rb
+bundle
+git add Gemfile.lock lib/browsersyncing/version.rb
+git commit -m "Bump version for $VERSION"
+git push
+git tag v$VERSION
+git push --tags
+gem build browsersyncing-rails.gemspec
+gem push "browsersyncing-rails-$VERSION.gem" --host https://rubygems.org
+rm "browsersyncing-rails-$VERSION.gem"
