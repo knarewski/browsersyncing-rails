@@ -11,5 +11,5 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["lib/**/*", "MIT-LICENSE", "README.md"]
 
-  spec.add_dependency "rails", ">= 6.0.0"
+  spec.add_dependency "rails", "~> 6.0", ">= 6.0.0"
 end
