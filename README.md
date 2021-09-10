@@ -1,8 +1,6 @@
 # Browser Syncing for Rails
 
-Use [Browser Sync](https://browsersyncing.io) with Rails. This gem provides installers to get you going with live reloading and browser syncing.
-
-Browser Syncing for Rails works beautifully with [cssbundling-rails](https://github.com/rails/cssbundling-rails) and [jsbundling-rails](https://github.com/rails/jsbundling-rails).
+Use [Browser Sync](https://browsersyncing.io) with Rails. This gem provides installers to get you going with live reloading and browser syncing — works beautifully with [cssbundling-rails](https://github.com/rails/cssbundling-rails) and [jsbundling-rails](https://github.com/rails/jsbundling-rails).
 
 Whenever Browser Sync detects changes to any assets or views, it will trigger a browser reload. You can configure Browser Sync via the generated `bs-config.js` — it's preconfigured to inject into `head` rather than `body`, due to turbo's body replacement.
 
